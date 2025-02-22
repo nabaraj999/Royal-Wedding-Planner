@@ -1,0 +1,325 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    height: 60px; /* Fixed height */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents inline spacing issues */
+    object-fit: contain; /* Ensures the image fits within its bounds */
+}
+.nav-center ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+.nav-center ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+.nav-center ul li a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.profile-icon:hover {
+    transform: scale(1.2);
+}
+#login {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+#login:hover {
+    background-color: #cc0000;
+}
+#home {
+    text-align: center;
+    padding: 80px 20px;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.cta-button {
+    background: #d4af37;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background: #b8860b;
+}
+
+#home {
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.home-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top:-70px;
+    filter: brightness(0.5);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensures the text is above the image */
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: #d4af37;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #b8860b;
+}
+
+
+
+
+
+#features {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: -20px;
+}
+
+.feature-card {
+    background-color: white;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Elevates the card */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow for effect */
+}
+
+.feature-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.feature-info {
+    padding: 20px;
+}
+
+.feature-info h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.feature-card:hover .feature-info h3 {
+    color: #d4af37; /* Highlight the title on hover */
+}
+
+.feature-card:hover .feature-info p {
+    color: #333; /* Darker text on hover */
+}
+
+
+
+
+
+
+footer {
+    background-color: #092e95; /* Light blue */
+    color: #f8f5f5;
+    padding: 15px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+/* Left Section */
+.footer-left {
+    text-align: left;
+    flex: 1;
+}
+
+/* Center Section */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-center a {
+    color: #fcf9f9;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.footer-center a:hover {
+    color: #0073e6;
+}
+
+/* Right Section - Social Icons */
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-right a {
+    font-size: 18px;
+    margin: 0 8px;
+    color: #f7f4f4;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    color: #0073e6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+/* Styling for username */
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+/* Styling for Logout button */
+.logout {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #e60000;
+}
+
+/* Styling for profile icon */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
