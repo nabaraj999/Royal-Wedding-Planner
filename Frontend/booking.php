@@ -30,6 +30,7 @@ if (empty($profileImage)) {
     <title>Wedding Booking</title>
     <link rel="stylesheet" href="./css/booking.css">
     <link rel="stylesheet" href="./css/index.css">
+  
 </head>
 <body>
 
@@ -65,60 +66,68 @@ if (empty($profileImage)) {
         </nav>
     </header>
 
-    <h2 class="a">Wedding Booking Form</h2>
-    <form action="./save_booking.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="bride_name" placeholder="Bride Name" required>
-        <input type="text" name="groom_name" placeholder="Groom Name" required>
-        <input type="text" name="bride_father" placeholder="Bride Father Name" required>
-        <input type="text" name="bride_mother" placeholder="Bride Mother Name" required>
-        <input type="text" name="groom_father" placeholder="Groom Father Name" required>
-        <input type="text" name="groom_mother" placeholder="Groom Mother Name" required>
-        <input type="tel" name="phone_number" placeholder="Phone Number" required>
+    <div class="booking-container">
+        <div class="booking-form">
+            <h2 class="a">Wedding Booking Form</h2>
+            <form action="./save_booking.php" method="POST" enctype="multipart/form-data">
+                
+                <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+                <input type="text" name="bride_name" placeholder="Bride Name" required>
+                <input type="text" name="groom_name" placeholder="Groom Name" required>
+                <input type="text" name="bride_father" placeholder="Bride Father Name" required>
+                <input type="text" name="bride_mother" placeholder="Bride Mother Name" required>
+                <input type="text" name="groom_father" placeholder="Groom Father Name" required>
+                <input type="text" name="groom_mother" placeholder="Groom Mother Name" required>
+                <input type="tel" name="phone_number" placeholder="Phone Number" required>
+                
+                <label>Bride Photo:</label>
+                <input type="file" name="bride_photo" accept="image/*" required>
+                
+                <label>Groom Photo:</label>
+                <input type="file" name="groom_photo" accept="image/*" required>
+
+                <label>Select Marriage Date:</label>
+                <input type="date" name="marriage_date" required>
+
+                <label>Catering Package:</label>
+                <select name="catering" id="catering" onchange="calculateTotal()">
+                    <option value="200000">Silver (₹2,00,000)</option>
+                    <option value="500000">Gold (₹5,00,000)</option>
+                    <option value="1000000">Platinum (₹10,00,000)</option>
+                </select>
+
+                <label>Decoration Package:</label>
+                <select name="decoration" id="decoration" onchange="calculateTotal()">
+                    <option value="200000">Silver (₹2,00,000)</option>
+                    <option value="500000">Gold (₹5,00,000)</option>
+                    <option value="1000000">Platinum (₹10,00,000)</option>
+                </select>
+
+                <label>Card Package:</label>
+                <select name="card" id="card" onchange="calculateTotal()">
+                    <option value="10000">Silver (₹10,000)</option>
+                    <option value="20000">Gold (₹20,000)</option>
+                    <option value="50000">Platinum (₹50,000)</option>
+                </select>
+
+                <label>Venue Package:</label>
+                <select name="venue" id="venue" onchange="calculateTotal()">
+                    <option value="200000">Silver (₹2,00,000)</option>
+                    <option value="500000">Gold (₹5,00,000)</option>
+                    <option value="1000000">Platinum (₹10,00,000)</option>
+                </select>
+
+                <h3 id="totalCost">Total Cost: ₹2,00,000</h3>
+                <input type="hidden" name="total_cost" id="total">
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        </div>
         
-        <label>Bride Photo:</label>
-        <input type="file" name="bride_photo" accept="image/*" required>
-        
-        <label>Groom Photo:</label>
-        <input type="file" name="groom_photo" accept="image/*" required>
-
-        <label>Select Marriage Date:</label>
-        <input type="date" name="marriage_date" required>
-
-        <label>Catering Package:</label>
-        <select name="catering" id="catering" onchange="calculateTotal()">
-            <option value="200000">Silver (₹2,00,000)</option>
-            <option value="500000">Gold (₹5,00,000)</option>
-            <option value="1000000">Platinum (₹10,00,000)</option>
-        </select>
-
-        <label>Decoration Package:</label>
-        <select name="decoration" id="decoration" onchange="calculateTotal()">
-            <option value="200000">Silver (₹2,00,000)</option>
-            <option value="500000">Gold (₹5,00,000)</option>
-            <option value="1000000">Platinum (₹10,00,000)</option>
-        </select>
-
-        <label>Card Package:</label>
-        <select name="card" id="card" onchange="calculateTotal()">
-            <option value="10000">Silver (₹10,000)</option>
-            <option value="20000">Gold (₹20,000)</option>
-            <option value="50000">Platinum (₹50,000)</option>
-        </select>
-
-        <label>Venue Package:</label>
-        <select name="venue" id="venue" onchange="calculateTotal()">
-            <option value="200000">Silver (₹2,00,000)</option>
-            <option value="500000">Gold (₹5,00,000)</option>
-            <option value="1000000">Platinum (₹10,00,000)</option>
-        </select>
-
-        <h3 id="totalCost">Total Cost: ₹2,00,000</h3>
-        <input type="hidden" name="total_cost" id="total">
-
-        <button type="submit">Submit Booking</button>
-    </form>
-
-
+        <div class="view-booking-btn">
+            <a href="view_booking.php">View Your Bookings</a>
+        </div>
+    </div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 

@@ -170,3 +170,27 @@ body {
         align-items: center;
     }
 }
+.login {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.05);
+}
+
+.login:active {
+    background-color: #00408d;
+    transform: scale(0.98);
+}

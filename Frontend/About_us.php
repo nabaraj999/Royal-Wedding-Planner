@@ -1,70 +1,18 @@
 <?php
-session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
-    // Redirect to login page if not logged in
-    header("Location: ./Login/login.php");
-    exit();
-}
-
-// Dummy logic for role and username (replace with real session data)
-$username = $_SESSION['username'];
-$role = $_SESSION['role'];
-$email = $_SESSION['email']; 
-
-// Assume the profile image is fetched from the database or is NULL
-$profileImage = null; // Simulate that the profile photo is unavailable
-
-// Use default profile image if no profile photo is available
-if (empty($profileImage)) {
-    $profileImage = './image/defult.png'; // Path to the default image
-}
+include'./header.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Royal Wedding Planner</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./css/about_us.css">
-    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-
-<header>
-        <nav>
-            <div class="nav-left">
-               <img src="./image/logo.png" class="logo" alt="Royal Wedding Planner Logo">
-            </div>
-            <div class="nav-center">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="services.php">Services</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="booking.php">Book</a></li>
-                    <li><a href="About_us.php">About Us</a></li>
-                </ul>
-            </div>
-            <div class="nav-right">
-                <?php if (isset($_SESSION['username']) && $_SESSION['username'] !== ""): ?>
-                 
-                    <span class="username"><?php echo $_SESSION['username']; ?></span>
-                    <button class="logout" onclick="location.href='logout.php'">Logout</button>
-                <?php else: ?>
-                  
-                    <span class="username">Guest</span>
-                    <button class="logout" onclick="location.href='./Login/login.php'">Login</button>
-                <?php endif; ?>
-
-                <a href="profile.php">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Profile" class="profile-icon">
-                </a>
-            </div>
-        </nav>
-    </header>
-
+    
 
     <div class="about-container">
         <h1>About Us</h1>

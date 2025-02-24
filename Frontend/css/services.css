@@ -65,3 +65,100 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
+
+
+/* Add this to your existing contact.css file */
+
+/* Login message styles for non-logged in users */
+.login-message {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-right: 2rem;
+}
+
+.login-message h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.login-message p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.login-message a {
+    color: #e83e8c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-message a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    background-color: #e83e8c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d33076;
+}
+
+/* Make sure the contact container looks good both with form and with login message */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 2rem;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .login-message,
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Button styles for consistency */
+button.login {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.logout {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

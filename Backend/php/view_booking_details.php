@@ -46,6 +46,7 @@ $conn->close();
         <p><strong>Marriage Date:</strong> <?php echo htmlspecialchars($booking['marriage_date']); ?></p>
         <p><strong>Phone:</strong> <?php echo htmlspecialchars($booking['phone_number']); ?></p>
         <p><strong>Total Cost:</strong> <?php echo htmlspecialchars($booking['total_cost']); ?></p>
+        <p><strong>Username:</strong> <?php echo htmlspecialchars($booking['username']); ?></p>
         <p><strong>Status:</strong> <?php echo htmlspecialchars($booking['status']); ?></p>
 
         <!-- Bride and Groom Photos -->
@@ -64,7 +65,7 @@ $conn->close();
         <p><strong>Card Design:</strong> <?php echo htmlspecialchars($booking['card_package']); ?></p>
         <p><strong>Venue:</strong> <?php echo htmlspecialchars($booking['venue_package']); ?></p>
 
-        <a href="admin_bookings.php" class="back-btn">Back to Bookings</a>
+        <a href="admin_booking.php" class="back-btn">Back to Bookings</a>
     </div>
 </body>
 </html>

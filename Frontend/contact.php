@@ -1,25 +1,5 @@
 <?php
-session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
-    // Redirect to login page if not logged in
-    header("Location: ./Login/login.php");
-    exit();
-}
-
-// Dummy logic for role and username (replace with real session data)
-$username = $_SESSION['username'];
-$role = $_SESSION['role'];
-$email = $_SESSION['email']; 
-
-// Assume the profile image is fetched from the database or is NULL
-$profileImage = null; // Simulate that the profile photo is unavailable
-
-// Use default profile image if no profile photo is available
-if (empty($profileImage)) {
-    $profileImage = './image/defult.png'; // Path to the default image
-}
+include'./header.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,52 +7,18 @@ if (empty($profileImage)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
 </head>
 <body>
-<header>
-        <nav>
-            <div class="nav-left">
-               <img src="./image/logo.png" class="logo" alt="Royal Wedding Planner Logo">
-            </div>
-            <div class="nav-center">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="services.php">Services</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="booking.php">Book</a></li>
-                    <li><a href="About_us.php">About Us</a></li>
-                </ul>
-            </div>
-            <div class="nav-right">
-                <?php if (isset($_SESSION['username']) && $_SESSION['username'] !== ""): ?>
-                 
-                    <span class="username"><?php echo $_SESSION['username']; ?></span>
-                    <button class="logout" onclick="location.href='logout.php'">Logout</button>
-                <?php else: ?>
-                  
-                    <span class="username">Guest</span>
-                    <button class="logout" onclick="location.href='./Login/login.php'">Login</button>
-                <?php endif; ?>
-
-                <a href="profile.php">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Profile" class="profile-icon">
-                </a>
-            </div>
-        </nav>
-    </header>
-
-
+<link rel="stylesheet" href="./css/contact.css">
     <!-- Contact Section -->
     <section class="contact">
         <h2>Contact Our Team</h2>
         <p>Have questions? We'd love to hear from you!</p>
 
         <div class="contact-container">
-            <!-- Contact Form -->
+            <?php if ($isLoggedIn): ?>
+            <!-- Contact Form - only shown to logged-in users -->
             <div class="contact-form">
                 <h3>Send Us a Message</h3>
 
@@ -82,10 +28,17 @@ if (empty($profileImage)) {
                     <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
-
             </div>
+            <?php else: ?>
+            <!-- Message for non-logged in users -->
+            <div class="login-message">
+                <h3>Want to contact us directly?</h3>
+                <p>Please <a href="./Login/login.php">login</a> to send us a message through our contact form.</p>
+                <button onclick="location.href='./Login/login.php'" class="login">Login to Contact Us</button>
+            </div>
+            <?php endif; ?>
 
-            <!-- Contact Info -->
+            <!-- Contact Info - shown to all users -->
             <div class="contact-info">
                 <h3>Contact Details</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Royal Street, New York, NY 10001</p>
@@ -133,10 +86,12 @@ if (empty($profileImage)) {
         </div>
 
         <div class="footer-center">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#book">Book</a>
+            <a href="index.php">Home</a>
+            <a href="About_us.php">About</a>
+            <a href="contact.php">Contact</a>
+            <?php if ($isLoggedIn): ?>
+            <a href="booking.php">Book</a>
+            <?php endif; ?>
         </div>
 
         <div class="footer-right">
